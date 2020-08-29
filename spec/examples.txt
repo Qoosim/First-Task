@@ -1,0 +1,7 @@
+example_id                                     | status  | run_time        |
+---------------------------------------------- | ------- | --------------- |
+./spec/helpers/tasks_helper_spec.rb[1:1]       | pending | 0.00001 seconds |
+./spec/models/task_spec.rb[1:1]                | pending | 0.00002 seconds |
+./spec/requests/tasks_request_spec.rb[1:1:1]   | passed  | 3.29 seconds    |
+./spec/requests/tasks_spec.rb[1:1:1]           | failed  | 0.07951 seconds |
+./spec/views/tasks/index.html.erb_spec.rb[1:1] | pending | 0.00001 seconds |
