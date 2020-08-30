@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to(:root, notice: 'Task created!')
     else
-      render new
+      redirect_to :root
     end
   end
 
@@ -26,8 +26,16 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to(:root, notice: 'Task updated!')
     else
+      flash.now[:notice] = 'Task is empty!'
       render :edit
     end
+  end
+
+  def destroy
+    @task = fetch_task
+    @task.destroy
+
+    redirect_to(:root, notice: 'Task has been deleted')
   end
 
   def show

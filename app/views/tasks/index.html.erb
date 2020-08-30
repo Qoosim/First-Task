@@ -1,7 +1,9 @@
 <h1>List of Tasks</h1>
 <%= render 'form' %>
 <ul>
-  <% @tasks.each do |t| %>
-    <li><%= t.task %> | <%= link_to 'Edit', edit_task_path(t) %></li>
+  <% @tasks.each do |task| %>
+    <li id="task_<%= task.id%>"><%= task.task %> 
+    | <%= link_to 'Edit', edit_task_path(task) %>
+    | <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: 'Are you sure?'} %> </li>
   <% end %>
 </ul>
